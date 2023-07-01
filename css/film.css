@@ -1,0 +1,368 @@
+.film-banner {
+    /* background-image: linear-gradient(to bottom, #111d1dee, #111d1dee), url(/image/filmBannerdermo.jpg); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.film-banner .container {
+    display: flex;
+    align-items: center;
+    padding: 150px 0;
+}
+.film-thumb {
+    width: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.film-thumb img {
+    border-radius: 10px;
+    width: 90%;
+}
+.film-info {
+    margin-left: 50px;
+    color: white;
+    width: 70%;
+}
+.film-title {
+    font-size: 25px;
+}
+.film-info1 {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+.film-info1 i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+.film-info2 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.film-info2 .core {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.film-info2 .core span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    margin-right: 20px;
+}
+.film-info2 .trailer {
+    height: 100%;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 18px;
+}
+
+.film-info2 .trailer i {
+    margin-right: 5px;
+}
+.film-quote {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.film-overview {
+    margin-top: 20px;
+    font-size: 25px;
+}
+.film-overview-txt {
+    margin-top: 8px;
+    font-size: 18px;
+}
+.cast {
+    background-image: url(/image/upcoming-bg.png);
+}
+.listCast {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+}
+.listCast::-webkit-scrollbar {
+    background-color: transparent;
+    height: 8px;
+}
+.listCast::-webkit-scrollbar-thumb:horizontal {
+    background-color: white;
+    border-radius: 10px;
+    width: 50px;
+}
+.listCast .cast-actor {
+    min-width: 13%;
+    margin: 50px 0;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.listCast .cast-thumb {
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.listCast .cast-thumb img {
+    border-radius: 10px;
+}
+.listCast .cast-thumb::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.166);
+    opacity: 0;
+    transition: 0.3s;
+}
+.listCast .cast-actor:hover .cast-thumb::before {
+    opacity: 1;
+}
+.listCast .cast-name {
+    color: white;
+    text-align: start;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.listCast .cast-more {
+    color: white;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+}
+.review {
+    background-image: url(/image/moviebackground.jpeg);
+}
+.listReview {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.card-review {
+    width: calc(50% - 30px);
+    display: flex;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.114);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.card-review .review-thumb {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card-review .review-detail {
+    margin-left: 50px;
+    text-align: start;
+    color: white;
+    width: calc(100% - 200px);
+}
+.review-author {
+    font-size: 20px;
+}
+.review-date {
+    font-size: 14px;
+    margin-top: 12px;
+}
+.review-content {
+    font-size: 12px;
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.review-more {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.526);
+    border: none;
+    font-style: italic;
+    cursor: pointer;
+}
+.review-content.active {
+    -webkit-box-orient: unset;
+}
+body {
+    position: relative;
+}
+.modal {
+    transform: translateX(-50%) scale(1);
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.603);
+    opacity: 0;
+}
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+.modal.active .modal-trailer {
+    transform: translate(-50%, -50%) scale(0.7);
+}
+.modal-trailer {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: var(--secondary-color);
+    padding-bottom: 5px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+.modal-trailer .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-trailer .top h3 {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+.modal-trailer .close-modal {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 50px;
+}
+@media (max-width: 922px) {
+    .film-banner .container {
+        flex-direction: column;
+        padding-bottom: 80px;
+    }
+    .film-thumb {
+        width: 50%;
+    }
+    .film-thumb img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .film-info {
+        margin-top: 50px;
+        text-align: center;
+        margin-left: 0;
+        color: white;
+        width: 90%;
+    }
+    .film-info2,
+    .film-info1 {
+        justify-content: center;
+    }
+    .film-overview-txt {
+        font-size: 14px;
+    }
+    .film-quote {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .film-info2 .trailer {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .film-info2 .core {
+        font-size: 14px;
+    }
+    .film-info2 .core span {
+        width: 60px;
+        height: 60px;
+    }
+    .listReview {
+        gap: 15px;
+    }
+    .listCast .cast-actor {
+        min-width: 25%;
+    }
+    .card-review {
+        padding: 10px;
+        width: calc(50% - 15px);
+    }
+    .card-review .review-detail {
+        margin-left: 15px;
+        width: calc(100% - 120px);
+    }
+    .card-review .review-thumb {
+        width: 120px;
+        height: 120px;
+    }
+    .review-author {
+        font-size: 16px;
+    }
+    .review-date {
+        font-size: 10px;
+        margin-top: 8px;
+    }
+    .review-content {
+        font-size: 8px;
+    }
+    .review-more {
+        font-size: 10px;
+    }
+    .film-info1 {
+        display: block;
+    }
+}
+@media (max-width: 575px) {
+    .listCast .cast-actor {
+        min-width: 50%;
+    }
+    .listCast .cast-name {
+        font-size: 10px;
+    }
+    .listCast .cast-more {
+        font-size: 8px;
+    }
+    .card-review {
+        width: 100%;
+    }
+    .modal-trailer {
+        width: 120%;
+    }
+    .play-trailer iframe {
+        height: 300px;
+    }
+    .modal-trailer .top h3 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 477px) {
+    .film-info2 .core {
+        margin-right: 10px;
+    }
+    .film-info2 .core span {
+        margin-right: 5px;
+    }
+    .film-title {
+        font-size: 16px;
+    }
+    .film-info1 p {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+    .film-overview-txt {
+        font-size: 10px;
+    }
+}

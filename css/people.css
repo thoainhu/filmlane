@@ -1,0 +1,62 @@
+.listPeople {
+    padding: 50px 0;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 25px;
+}
+.listPeople .card {
+    text-align: center;
+    width: calc(20% - 25px);
+    margin-bottom: 30px;
+}
+.listPeople .card a {
+    text-align: center;
+}
+.listPeople .card-peopleThumb {
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.listPeople .card-peopleName {
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.listPeople .card-peopleRate {
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+}
+.listPeople .card-peopleRate i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+.listPeople .card-peopleThumb::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.166);
+    opacity: 0;
+    transition: 0.3s;
+}
+.listPeople .card:hover .card-peopleThumb::before {
+    opacity: 1;
+}
+@media (max-width: 922px) {
+    .listPeople {
+        gap: 10px;
+    }
+    .listPeople .card {
+        min-width: calc(25% - 10px);
+    }
+}
+@media (max-width: 575px) {
+    .listPeople .card {
+        min-width: calc(50% - 10px);
+    }
+}

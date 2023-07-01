@@ -1,0 +1,135 @@
+.actor {
+    background-color: black;
+}
+.actor .container {
+    display: flex;
+    padding: 50px 0;
+}
+.actor-img {
+    width: 25%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.actor-img img {
+    border-radius: 10px;
+}
+.actor-img:hover .actor-info {
+    opacity: 1;
+    left: 0;
+}
+.actor-name {
+    font-size: 25px;
+}
+.actor-info {
+    opacity: 0;
+    position: absolute;
+    color: white;
+    top: 0;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.544);
+    transition: 0.5s;
+}
+.actor-info h3 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 25px;
+}
+.actor-info h4 {
+    text-align: center;
+    margin-top: 50px;
+}
+.actor-info h6 {
+    margin-left: 30px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.actor-info p {
+    margin-left: 30px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.actor-detail {
+    width: 75%;
+    margin-left: 80px;
+    color: white;
+}
+.actor-name {
+    color: white;
+}
+.actor-bio {
+    font-size: 25px;
+    margin-top: 20px;
+}
+.actor-bio-text {
+    font-size: 18px;
+    margin-top: 5px;
+}
+.actor-film {
+    font-size: 25px;
+    margin-top: 20px;
+}
+.actor-detail .listFilm .card {
+    margin: 20px 0;
+}
+.actor-detail .listFilm .card .card-filmThumb {
+    height: 350px;
+}
+
+@media (max-width: 922px) {
+    .actor .container {
+        flex-direction: column;
+    }
+    .actor-img {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .actor-detail {
+        margin-top: 50px;
+        text-align: center;
+    }
+    .actor-bio-text {
+        font-size: 14px;
+    }
+    .actor-detail {
+        width: 100%;
+        margin-left: 0;
+    }
+    .listFilm .card {
+        min-width: 30%;
+    }
+    .actor-info h3 {
+        margin: 10px auto;
+        font-size: 20px;
+    }
+    .actor-info h6 {
+        margin-left: 20px;
+        font-size: 8px;
+        margin-top: 5px;
+    }
+    .actor-info p {
+        margin-left: 20px;
+        font-size: 8px;
+        margin-top: 2px;
+    }
+}
+@media (max-width: 575px) {
+    .actor-bio-text {
+        font-size: 12px;
+    }
+    .listFilm .card {
+        min-width: 50%;
+    }
+    .listBanner-title h1 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 441px) {
+    .listFilm .card {
+        min-width: 100%;
+    }
+}

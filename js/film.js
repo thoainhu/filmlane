@@ -101,7 +101,7 @@ async function showDetailFilm(filmID, type) {
         dataCastOfFilm.cast.forEach((element) => {
             castOfFilm.innerHTML += `
                 <li class="cast-actor" >
-                    <a href="/html/actor.html?actorID=${element.id}" >
+                    <a href="actor.html?actorID=${element.id}" >
                         <div class="cast-thumb">
                             <img src="https://image.tmdb.org/t/p/w300${element.profile_path} " alt="" />
                         </div>

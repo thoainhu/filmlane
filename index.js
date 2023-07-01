@@ -11,10 +11,10 @@ function renderHeader() {
                     <img src="/image/logo.svg" alt="" />
                 </a>
                 <ul class="header-menu">
-                    <li><a href="/index.html">HOME</a></li>
-                    <li><a href="/html/list.html?type=movie">MOVIES</a></li>
-                    <li><a href="/html/list.html?type=tv">TV SHOWS</a></li>
-                    <li><a href="/html/people.html">PEOPLE</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="list.html?type=movie">MOVIES</a></li>
+                    <li><a href="list.html?type=tv">TV SHOWS</a></li>
+                    <li><a href="people.html">PEOPLE</a></li>
                     <li>
                         <a>GENRE</a>
                         <ul class="submenu"></ul>
@@ -55,11 +55,11 @@ function renderFooter() {
                             <img src="/image/logo.svg" alt="" />
                         </a>
                         <ul class="footer-menu">
-                            <li><a href="/index.html">HOME</a></li>
-                            <li><a href="/html/list.html?type=movie">MOVIES</a></li>
-                            <li><a href="/html/list.html?type=tv">TV SHOWS</a></li>
-                            <li><a href="/html/people.html">PEOPLE</a></li>
-                            <li><a href="/html/list.html?type=movie">GENRE</a></li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="list.html?type=movie">MOVIES</a></li>
+                            <li><a href="list.html?type=tv">TV SHOWS</a></li>
+                            <li><a href="people.html">PEOPLE</a></li>
+                            <li><a href="list.html?type=movie">GENRE</a></li>
                         </ul>
                     </div>
                     <div class="footer-info">
@@ -98,7 +98,7 @@ function renderData(data, box) {
     data.results.forEach((element) => {
         box.innerHTML += `
                     <li class="card">
-                        <a href="/html/film.html?filmID=${element.id}&type=${element.title ? "movie" : "tv"}">
+                        <a href="film.html?filmID=${element.id}&type=${element.title ? "movie" : "tv"}">
                         <div class="card-filmThumb">
                             <img src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="" />
                         </div>
@@ -118,7 +118,7 @@ function renderPeople(data, box) {
     data.results.forEach((element) => {
         box.innerHTML += `
                <li class="card">
-                        <a href="/html/actor.html?actorID=${element.id}" >
+                        <a href="actor.html?actorID=${element.id}" >
                             <div class="card-peopleThumb">
                                 <img src="https://image.tmdb.org/t/p/w300${element.profile_path}" alt="" />
                             </div>
@@ -148,7 +148,7 @@ async function menuGenre() {
     const submenu = document.querySelector(".submenu");
     const dataGenreList = await getData(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
     dataGenreList.genres.forEach((element) => {
-        submenu.innerHTML += `<li><a href="/html/list.html?type=${element.name}&id=${element.id}">${element.name}</a></li>`;
+        submenu.innerHTML += `<li><a href="list.html?type=${element.name}&id=${element.id}">${element.name}</a></li>`;
     });
 }
 menuGenre();
@@ -157,10 +157,10 @@ menuGenre();
 const search = document.querySelector(".iconSearch");
 const inputSearch = document.querySelector(".header-search input");
 search.addEventListener("click", function () {
-    window.location.href = `/html/list.html?query=${inputSearch.value}&title="Search"`;
+    window.location.href = `list.html?query=${inputSearch.value}&title="Search"`;
 });
 inputSearch.addEventListener("keydown", function (e) {
     if (e.keyCode == "13") {
-        window.location.href = `/html/list.html?query=${inputSearch.value}&title="Search"`;
+        window.location.href = `list.html?query=${inputSearch.value}&title="Search"`;
     }
 });

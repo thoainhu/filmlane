@@ -41,7 +41,7 @@ async function showActorDetail(ID_PEOPLE) {
     dataShowActorFilm.cast.forEach((element) => {
         listFilm.innerHTML += `
     <li class="card" >
-                            <a href="/html/film.html?filmID=${element.id}">
+                            <a href="film.html?filmID=${element.id}">
                             <div class="card-filmThumb">
                                 <img src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="" />
                             </div>

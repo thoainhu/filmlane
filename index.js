@@ -8,7 +8,7 @@ function renderHeader() {
     header.innerHTML = `
 <div class="container align-item">
                 <a href="index.html" class="header-logo">
-                    <img src="image/logo.svg" alt="" />
+                    <img src="/image/logo.svg" alt="" />
                 </a>
                 <ul class="header-menu">
                     <li><a href="index.html">HOME</a></li>
@@ -51,7 +51,7 @@ function renderFooter() {
                 <div class="container">
                     <div class="footer-links">
                         <a class="footer-logo" href="index.html">
-                            <img src="image/logo.svg" alt="" />
+                            <img src="/image/logo.svg" alt="" />
                         </a>
                         <ul class="footer-menu">
                             <li><a href="index.html">HOME</a></li>

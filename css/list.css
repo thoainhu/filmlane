@@ -1,5 +1,5 @@
 .listBanner {
-    background-image: url(../image/moviebackground.jpeg);
+    background-image: url(image/moviebackground.jpeg);
     background-position: center;
     background-size: cover;
     padding-top: 150px;
@@ -14,7 +14,7 @@
     font-size: 50px;
 }
 .list {
-    background-image: url(../image/upcoming-bg.png);
+    background-image: url(image/upcoming-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;

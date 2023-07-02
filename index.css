@@ -440,6 +440,11 @@ input {
         left: -142%;
         background-color: var(--secondary-color);
     }
+    .header-menu li.clicked > .submenu {
+        top: 0;
+        left: -142%;
+        background-color: var(--secondary-color);
+    }
     .header-menu.active {
         visibility: visible;
         opacity: 1;

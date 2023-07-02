@@ -1,6 +1,7 @@
 const menuBar = document.querySelector(".hearder-menu-bar .icon");
 const footer = document.querySelector(".footer");
 const header = document.querySelector(".header");
+const clickedSubmenu = document.querySelector(".header-menu li");
 const API_KEY = "e9e9d8da18ae29fc430845952232787c";
 
 function renderHeader() {
@@ -16,7 +17,7 @@ function renderHeader() {
                     <li><a href="list.html?type=movie">MOVIES</a></li>
                     <li><a href="list.html?type=tv">TV SHOWS</a></li>
                     <li><a href="people.html">PEOPLE</a></li>
-                    <li>
+                    <li onclick="clickSubmenu()">
                         <a>GENRE</a>
                         <ul class="submenu"></ul>
                     </li>
@@ -33,6 +34,9 @@ function renderHeader() {
             </div>`;
 }
 renderHeader();
+function clickSubmenu() {
+    clickedSubmenu.classList.toggle("clicked");
+}
 function renderFooter() {
     const footer = document.querySelector(".footer");
     footer.innerHTML = `

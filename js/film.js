@@ -22,7 +22,6 @@ async function renderTrailer(numberfilmID) {
 async function openTrailer(numberfilmID) {
     let findTrailer = await renderTrailer(numberfilmID);
     modal.classList.add("active");
-    console.log(findTrailer);
     trailer.innerHTML += `
                     <iframe
                         width="100%"
@@ -32,7 +31,6 @@ async function openTrailer(numberfilmID) {
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
-                        
                     ></iframe>
 `;
 }
@@ -63,8 +61,6 @@ async function showDetailFilm(filmID, type) {
     for (let key in dataDetailFilm.genres) {
         typeFilm += dataDetailFilm.genres[key].name + ",";
     }
-
-    console.log(dataDetailFilm);
     filmInfo.innerHTML = `
     <div class="film-thumb">
                     <img src="https://image.tmdb.org/t/p/w300${dataDetailFilm.poster_path}" alt="" />
@@ -121,10 +117,17 @@ async function showDetailFilm(filmID, type) {
         document.querySelector(".review").style.display = "none";
     } else {
         dataReview.results.forEach((element) => {
+            let avatar = element.author_details.avatar_path.substr(1);
+            if (!avatar.includes("https")) {
+                avatar = `https://image.tmdb.org/t/p/w300/${element.author_details.avatar_path}`;
+            }
+            if (avatar == "null") {
+                avatar == "image/favicon.svg";
+            }
             listReview.innerHTML += `
                     <li class="card-review">
                         <div class="review-thumb">
-                            <img src="${element.author_details.avatar_path.substr(1)}" alt="" />
+                            <img src="${avatar}" alt="" />
                         </div>
                         <div class="review-detail">
                             <h6 class="review-author">A review by <span>${element.author}</span></h6>

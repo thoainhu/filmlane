@@ -7,8 +7,8 @@ function renderHeader() {
     const header = document.querySelector(".header");
     header.innerHTML = `
 <div class="container align-item">
-                <a href="/index.html" class="header-logo">
-                    <img src="/image/logo.svg" alt="" />
+                <a href="index.html" class="header-logo">
+                    <img src="image/logo.svg" alt="" />
                 </a>
                 <ul class="header-menu">
                     <li><a href="index.html">HOME</a></li>
@@ -23,7 +23,7 @@ function renderHeader() {
                 <div class="header-search">
                     <input type="text" placeholder="Search for a movie" />
                     <button class="iconSearch">
-                        <img src="/icon/search.png" alt="" />
+                        <img src="icon/search.png" alt="" />
                     </button>
                 </div>
                 <div class="hearder-menu-bar">
@@ -32,7 +32,6 @@ function renderHeader() {
             </div>`;
 }
 renderHeader();
-
 function renderFooter() {
     const footer = document.querySelector(".footer");
     footer.innerHTML = `
@@ -52,7 +51,7 @@ function renderFooter() {
                 <div class="container">
                     <div class="footer-links">
                         <a class="footer-logo" href="index.html">
-                            <img src="/image/logo.svg" alt="" />
+                            <img src="image/logo.svg" alt="" />
                         </a>
                         <ul class="footer-menu">
                             <li><a href="index.html">HOME</a></li>
@@ -63,7 +62,7 @@ function renderFooter() {
                         </ul>
                     </div>
                     <div class="footer-info">
-                        <div class="footer-rights">© 2023 <span>Filmlane</span>. All Rights Reserved <span></span></div>
+                        <div class="footer-rights">© 2023 <span>Filmlane</span>. All Rights Reserved by <span>Thoai Nhu</span></div>
                         <ul class="footer-social">
                             <li>
                                 <a href="index.html"><i class="fa-brands fa-facebook"></i></a>
@@ -94,7 +93,6 @@ async function getData(url) {
 
 //RENDER DATA
 function renderData(data, box) {
-    console.log(data);
     data.results.forEach((element) => {
         box.innerHTML += `
                     <li class="card">
@@ -104,7 +102,7 @@ function renderData(data, box) {
                         </div>
                         <h5 class="card-filmName">${element.title ? element.title : element.original_name}</h5>
                         <div class="card-filmDetail">
-                            <h6 class="card-filmDate">${element.release_date}</h6>
+                            <h6 class="card-filmDate">${element.release_date ? element.release_date : element.first_air_date}</h6>
                             <p class="card-filmRate"><i class="fa-solid fa-star"></i>${element.vote_average}</p>
                         </div>
                         </a>

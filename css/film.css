@@ -85,7 +85,7 @@
     font-size: 18px;
 }
 .cast {
-    background-image: url(image/upcoming-bg.png);
+    background-image: url(../image/upcoming-bg.png);
 }
 .listCast {
     display: flex;
@@ -146,7 +146,7 @@
     font-weight: 400;
 }
 .review {
-    background-image: url(image/moviebackground.jpeg);
+    background-image: url(../image/moviebackground.jpeg);
 }
 .listReview {
     display: flex;
